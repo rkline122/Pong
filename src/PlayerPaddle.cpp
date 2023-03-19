@@ -53,9 +53,11 @@ void PlayerPaddle::update(double delta_time){
     */
 
     if(m_direction == Direction::UP){
-        m_position_y -= m_movement_speed * delta_time;
+        if(m_position_y > 0)
+            m_position_y -= m_movement_speed * delta_time;
     }else if(m_direction == Direction::DOWN){
-        m_position_y += m_movement_speed * delta_time;
+        if(m_position_y < SCREEN_HEIGHT - m_paddle.h)
+            m_position_y += m_movement_speed * delta_time;
     }else{
         m_position_y += 0.0;
     }

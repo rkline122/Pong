@@ -7,8 +7,8 @@ Pong::Pong() :
 m_window(nullptr), 
 m_renderer(nullptr), 
 m_running(false), 
-m_screenWidth(800), 
-m_screenHeight(600) 
+m_screenWidth(SCREEN_WIDTH), 
+m_screenHeight(SCREEN_HEIGHT) 
 {}
 
 Pong::~Pong(){
@@ -27,8 +27,8 @@ if (SDL_Init(SDL_INIT_VIDEO) != 0) {
             "Pong", 
             SDL_WINDOWPOS_CENTERED, 
             SDL_WINDOWPOS_CENTERED, 
-            m_screenWidth, 
-            m_screenHeight, 
+            SCREEN_WIDTH, 
+            SCREEN_HEIGHT, 
             0
         );
 

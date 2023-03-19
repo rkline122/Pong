@@ -3,7 +3,8 @@
 
 // ******* Window *******
 float const DELTA_TIME = 1.0/60.0;
-
+float const SCREEN_WIDTH = 800;
+float const SCREEN_HEIGHT = 600;
 
 
 // ******* Paddles *******
