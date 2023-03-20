@@ -20,6 +20,7 @@ class PlayerPaddle{
         void handle_events(SDL_Event const &event);
         void update(double delta_time);
         void draw(SDL_Renderer *renderer);
+        SDL_Rect get_body();
         
         
 

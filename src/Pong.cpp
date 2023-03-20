@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include "headers/Pong.hpp"
 #include "headers/config.hpp"
+#include "headers/Utils.hpp"
 
 
 Pong::Pong() : 
@@ -65,7 +66,15 @@ void Pong::run(){
 }
 
 void Pong::update(double delta_time) {
-    m_ball.update(delta_time);
+     Direction ball_direction = m_ball.get_direction();
+
+    if (isColliding(m_ball.get_body(), m_playerPaddle.get_body())){
+        ball_direction = Direction::RIGHT;
+    }else if(isColliding(m_ball.get_body(), m_CPUPaddle.get_body())){
+        ball_direction = Direction::LEFT;
+    }
+
+    m_ball.update(delta_time, ball_direction);
     m_playerPaddle.update(delta_time);
     m_CPUPaddle.update(delta_time);
     
@@ -76,7 +85,7 @@ void Pong::render() {
 
     m_playerPaddle.draw(m_renderer);
     m_CPUPaddle.draw(m_renderer);
-    m_ball.draw(m_renderer);
+    drawObject(m_renderer, m_ball.get_body());
 
     SDL_RenderPresent(m_renderer);
 }

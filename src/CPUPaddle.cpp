@@ -50,3 +50,7 @@ void CPUPaddle::draw(SDL_Renderer *renderer){
     SDL_RenderFillRect(renderer, &m_paddle);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 }
+
+SDL_Rect CPUPaddle::get_body(){
+    return m_paddle;
+}

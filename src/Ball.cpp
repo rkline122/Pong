@@ -1,6 +1,8 @@
 #include <SDL2/SDL.h>
 #include "headers/Ball.hpp"
+#include "headers/PlayerPaddle.hpp"
 #include "headers/config.hpp"
+#include "headers/Utils.hpp"
 #include <iostream>
 
 Ball::Ball(){
@@ -14,17 +16,18 @@ Ball::Ball(){
     m_ball_position_y = BALL_START_Y;
 
     m_speed = BALL_SPEED;
+
+    m_direction = Direction::LEFT;
     
 }
 
-void Ball::update(double delta_time){
+void Ball::update(double delta_time, Direction direction){
     /*
     
         Updates the current frame
 
     */
-
-    m_direction = Direction::LEFT;
+   m_direction = direction;
 
     if(m_direction == Direction::LEFT){
         if(m_ball_position_x > 0)
@@ -43,21 +46,18 @@ void Ball::update(double delta_time){
     m_body.y = m_ball_position_y;
 }
 
-
-void Ball::draw(SDL_Renderer *renderer){
-    /*
-        Draws new frame to the renderer
-    */
-
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderFillRect(renderer, &m_body);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-}
-
 int Ball::get_position_x(){
     return m_ball_position_x;
 }
 
 int Ball::get_position_y(){
     return m_ball_position_y;
+}
+
+SDL_Rect Ball::get_body(){
+    return m_body;
+}
+
+Direction Ball::get_direction(){
+    return m_direction;
 }

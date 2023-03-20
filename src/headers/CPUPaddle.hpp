@@ -18,6 +18,7 @@ class CPUPaddle{
 
         void update(double delta_time);
         void draw(SDL_Renderer *renderer);  
+        SDL_Rect get_body();
         
 
     private:
