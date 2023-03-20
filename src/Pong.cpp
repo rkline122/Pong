@@ -65,11 +65,18 @@ void Pong::run(){
 }
 
 void Pong::update(double delta_time) {
+    m_ball.update(delta_time);
     m_playerPaddle.update(delta_time);
+    m_CPUPaddle.update(delta_time);
+    
 }
 
 void Pong::render() {
     SDL_RenderClear(m_renderer);
+
     m_playerPaddle.draw(m_renderer);
+    m_CPUPaddle.draw(m_renderer);
+    m_ball.draw(m_renderer);
+
     SDL_RenderPresent(m_renderer);
 }

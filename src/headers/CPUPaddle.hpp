@@ -1,26 +1,23 @@
-#ifndef PLAYERPADDLE_H
-#define PLAYERPADDLE_H
+#ifndef CPUPADDLE_H
+#define CPUPADDLE_H
 
 #include <SDL2/SDL.h>
 
-class PlayerPaddle{
+class CPUPaddle{
     
     public:
 
         enum class Direction{
             NONE,
             UP,
-            DOWN,
-            LEFT
+            DOWN
         };
 
-        PlayerPaddle();
-        ~PlayerPaddle() = default;
+        CPUPaddle();
+        ~CPUPaddle() = default;
 
-        void handle_events(SDL_Event const &event);
         void update(double delta_time);
-        void draw(SDL_Renderer *renderer);
-        
+        void draw(SDL_Renderer *renderer);  
         
 
     private:

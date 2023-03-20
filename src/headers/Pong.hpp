@@ -3,6 +3,8 @@
 
 #include <SDL2/SDL.h>
 #include "PlayerPaddle.hpp"
+#include "CPUPaddle.hpp"
+#include "Ball.hpp"
 
 class Pong {
     public:
@@ -20,6 +22,9 @@ class Pong {
         SDL_Event   m_event;
 
         PlayerPaddle m_playerPaddle;
+        CPUPaddle m_CPUPaddle;
+
+        Ball m_ball;
         
         bool m_running;
         int m_screenWidth;
