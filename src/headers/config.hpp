@@ -27,7 +27,9 @@ float const CPU_PADDLE_START_Y = SCREEN_HEIGHT/2;
 int const BALL_HEIGHT = 16;
 int const BALL_WIDTH = 16;
 
-float const BALL_SPEED = 100.0;
+float const BALL_SPEED = 200.0;
+float const BALL_SPEED_MODIFIER = 50;
+float const BALL_MAX_SPEED = 1500;
 
 float const BALL_START_X = SCREEN_WIDTH/2;
 float const BALL_START_Y = SCREEN_HEIGHT/2;
