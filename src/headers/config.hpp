@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <iostream>
+#include <random>
+
 // ******* Window *******
 
 float const DELTA_TIME = 1.0/60.0;
@@ -28,12 +31,11 @@ int const BALL_HEIGHT = 16;
 int const BALL_WIDTH = 16;
 
 float const BALL_SPEED = 200.0;
-float const BALL_SPEED_MODIFIER = 50;
+float const BALL_SPEED_MODIFIER = 20;
 float const BALL_MAX_SPEED = 1500;
 
 float const BALL_START_X = SCREEN_WIDTH/2;
 float const BALL_START_Y = SCREEN_HEIGHT/2;
-
 
 
 

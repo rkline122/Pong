@@ -1,4 +1,5 @@
 #include "headers/Pong.hpp"
+#include <SDL2/SDL_timer.h>
 
 
 int main(){

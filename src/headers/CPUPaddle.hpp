@@ -2,7 +2,6 @@
 #define CPUPADDLE_H
 
 #include <SDL2/SDL.h>
-
 class CPUPaddle{
     
     public:
@@ -16,7 +15,7 @@ class CPUPaddle{
         CPUPaddle();
         ~CPUPaddle() = default;
 
-        void update(double delta_time);
+        void update(double delta_time, int ball_position_y);
         void draw(SDL_Renderer *renderer);  
         SDL_Rect get_body();
         

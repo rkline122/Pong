@@ -5,6 +5,8 @@
 
 bool isColliding(SDL_Rect object1, SDL_Rect object2);
 void drawObject(SDL_Renderer *renderer, SDL_Rect object);
+int generate_random_int(int min, int max);
+
 
 enum class Direction{
             NONE,
